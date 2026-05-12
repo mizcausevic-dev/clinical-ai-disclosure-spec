@@ -7,9 +7,9 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [1.0.0] - 2026-05-12
 
 ### Released
-- Published \$name\ as a public, portfolio-grade healthcare operations system.
+- Published **clinical-ai-disclosure-spec** as a public, portfolio-grade healthcare operations system.
 - Packaged the current implementation, documentation, validation workflow, and proof surfaces into a repo that could be reviewed by engineering, product, and operating stakeholders.
-- Tightened the repo story around the real-world operating problem: patient pathways were breaking around handoffs, callback gaps, and queue fragmentation rather than around a lack of raw data.
+- Tightened the repo story around the real-world operating problem: patient handoff delays, callback gaps, and pathway-queue fragmentation.
 
 ### Why this mattered
 - Existing approaches in EHRs, outreach systems, and generic workflow tools were useful, but they recorded activity, but did not turn delay pressure and owner confusion into a clear operational next move.
@@ -18,7 +18,7 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [0.1.0] - 2026-02-18
 
 ### Shipped
-- Cut the first coherent internal version of the product shape behind \$name\.
+- Cut the first coherent internal version of the product shape behind **clinical-ai-disclosure-spec**.
 - Standardized the core objects, decision surfaces, and operator outputs around the repo's main working problem.
 - Established the first reviewable version of the architecture described as: Open JSON spec for vendor disclosure of AI systems used in healthcare. HIPAA / FDA / SaMD posture, bias audits, EHR integration. The HealthTech vertical extension to the Kinetic Gain Protocol Suite. v0.1 draft.
 
@@ -55,12 +55,12 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [Idea Origin] - 2022-02-11
 
 ### Observed
-- The initial idea surfaced while looking at how teams were handling patient pathways were breaking around handoffs, callback gaps, and queue fragmentation rather than around a lack of raw data.
+- The initial idea surfaced while looking at how teams were handling patient handoff delays, callback gaps, and pathway-queue fragmentation.
 - The recurring pattern was that people could often see fragments of the problem, but not the whole operational story in one place.
 
 ### Insight
 - The missing product was not another point solution. It was a clearer operating layer that made the work legible to care coordination and health-system operations teams.
-- That insight became the basis for \$name\.
+- That insight became the basis for **clinical-ai-disclosure-spec**.
 
 ## [Background Signals] - 2022-08-09
 

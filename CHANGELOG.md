@@ -12,7 +12,8 @@ This log is intentionally written as an engineering record rather than a launch 
 - Tightened the repo story around the real-world operating problem: patient handoff delays, callback gaps, and pathway-queue fragmentation.
 
 ### Why this mattered
-- Existing approaches in EHRs, outreach systems, and generic workflow tools were useful, but they recorded activity, but did not turn delay pressure and owner confusion into a clear operational next move.
+- Existing approaches in EHRs, outreach systems, and generic workflow tools were useful for adjacent workflows.
+- They still missed the core need: a command layer that could turn pathway friction into clear ownership, urgency, and next-best action.
 - This release made the repo readable as an operational capability rather than a narrow technical demo.
 
 ## [0.1.0] - 2026-02-18

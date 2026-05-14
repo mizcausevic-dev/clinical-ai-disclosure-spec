@@ -1,5 +1,8 @@
 # Clinical AI Disclosure
 
+[![Validate examples](https://github.com/mizcausevic-dev/clinical-ai-disclosure-spec/actions/workflows/validate.yml/badge.svg)](https://github.com/mizcausevic-dev/clinical-ai-disclosure-spec/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 > **Open JSON spec for vendor disclosure of AI systems used in healthcare.**
 > Machine-readable HIPAA / FDA / SaMD posture. Bias audits as a first-class field. v0.1 draft.
 

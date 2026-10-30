@@ -42,15 +42,15 @@ Three principles drive the design:
 
 ### 3.1 Regulatory disclosure as machine-readable evidence
 
-Hospital procurement today reads vendor whitepapers, HIPAA attestations, and (when applicable) FDA 510(k) summaries as PDFs. **A Clinical AI Card is the same content in a format an LMS, an EHR app gallery, or an automated procurement tool can read in milliseconds.** The fields map directly to controls in CMS Conditions of Participation, 21st Century Cures Act information-blocking provisions, and HIPAA security-rule audits.
+Hospital procurement may review vendor whitepapers, HIPAA documentation, and (when applicable) FDA clearance records. **A Clinical AI Card makes vendor-disclosed evidence machine-readable for procurement and integration review.** A valid Card does not establish FDA clearance, HIPAA compliance, CMS compliance, or compliance with information-blocking rules.
 
 ### 3.2 Autonomy ↔ device-status coupling
 
-The single most important conditional rule in this spec: **a system that acts autonomously in a clinical role is, by FDA definition, a medical device.** §6.3 enforces this via schema (`decision_support_level=autonomous` ⇒ `is_medical_device=true`). Vendors who try to ship "autonomous AI" without device clearance are publicly identified by their own Card.
+This draft uses a conservative gate: `decision_support_level=autonomous` requires `is_medical_device=true` under §5.1. This is a disclosure-format choice, not a determination that every autonomous software function is a device under FDA law. Device status depends on the function's intended use and applicable exclusions; consult the [FDA CDS policy navigator](https://www.fda.gov/medical-devices/digital-health-center-excellence/step-6-software-function-intended-provide-clinical-decision-support). A vendor that cannot truthfully declare device status cannot use this draft's autonomous profile without a spec revision.
 
 ### 3.3 Bias audits as a first-class field
 
-For high-stakes systems (sepsis detection, sepsis bundle compliance, fall-risk prediction, ICU readmission), bias-by-protected-class drives most regulatory action — both FDA's "AI/ML-Enabled Medical Devices" guidance and state laws (NYC LL 144 for hiring AI, Colorado SB 21-169 for insurance AI). The spec carries `evidence.bias_audit_uri` as a top-level field rather than a footnote.
+For high-stakes clinical systems, bias evaluation can inform safety and equity review. The spec carries `evidence.bias_audit_uri` as a top-level field and requires it for selected profiles. This is a Suite disclosure rule; it is not a claim that one FDA or state-law bias-audit mandate applies to every such system.
 
 ## 4. Document structure
 
@@ -169,7 +169,7 @@ Independent evaluations beyond the vendor's own `validation_studies`. Each entry
 
 ### 5.1 Autonomy ⇔ medical device
 
-If `clinical_role.decision_support_level` is `autonomous`, then `regulatory.is_medical_device` **MUST** be `true`. Autonomous AI in a clinical context that is not classified as a device represents a misclassification under current FDA guidance.
+If `clinical_role.decision_support_level` is `autonomous`, then `regulatory.is_medical_device` **MUST** be `true` to conform to this draft. This conservative format constraint does not itself classify software under FDA law; classification requires an intended-use and function-specific assessment. See the [FDA CDS policy navigator](https://www.fda.gov/medical-devices/digital-health-center-excellence/step-6-software-function-intended-provide-clinical-decision-support).
 
 ### 5.2 SaMD class completeness
 

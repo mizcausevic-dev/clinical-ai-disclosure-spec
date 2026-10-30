@@ -25,9 +25,9 @@ This spec is the **healthcare-vertical sibling** of [AI Tutor Cards](https://git
 
 ## The conditional rules (the procurement spine)
 
-These are the rules schema-enforced via `allOf/if/then` — most carry direct regulatory weight:
+These are schema-enforced disclosure rules. Regulatory status and compliance require separate assessment:
 
-1. **Autonomy ⇔ medical device** — `decision_support_level=autonomous` ⇒ `is_medical_device=true`. The FDA's position: autonomous clinical diagnosis IS a device, end of story.
+1. **Conservative autonomous-role gate** — `decision_support_level=autonomous` ⇒ `is_medical_device=true` in this draft. This is a format rule, not an FDA determination for every software function; assess intended use and applicable exclusions using the [FDA CDS policy navigator](https://www.fda.gov/medical-devices/digital-health-center-excellence/step-6-software-function-intended-provide-clinical-decision-support).
 2. **SaMD completeness** — `is_software_as_medical_device=true` ⇒ `samd_class` + `samd_classification_rationale` required.
 3. **FDA clearance documentation** — `fda_status ∈ {510k_cleared, de_novo, pma}` ⇒ clearance number + URI required.
 4. **PHI gating** — `phi_processed=true` ⇒ HIPAA posture + BAA posture must be explicit.
